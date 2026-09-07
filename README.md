@@ -3,6 +3,7 @@
 ## Table of Content
 - [Project Overview](#project-overview)
 - [Objectives](#objectives)
+- [Tools & Technologies](#tools-&-technologies)
 
 ### Project Overview
 This project focuses on analyzing car sales data to uncover meaningful insights into sales performance, revenue generation, customer purchasing patterns, vehicle characteristics, and dealer performance.
