@@ -1,4 +1,4 @@
-# CARS-SALES-ANALYSIS
+# CAR-SALES-ANALYSIS
 
 ## Table of Content
 - [Project Overview](#project-overview)
