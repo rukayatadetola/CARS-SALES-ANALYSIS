@@ -88,4 +88,60 @@ group by Model
 order by Unit_sold desc
 limit 10;
 ```
-6.  
+6.  **Dealer Performance Analysis**
+``` SQL
+SELECT
+Dealer_Name,
+count(*) AS Unit_Sold,
+sum(`Price ($)`) AS Total_Revenue
+from my_carss.`car sales.xlsx - car_data`
+group by Dealer_Name
+order by Total_Revenue desc;
+```
+7. **Regional Sales Analysis**
+```SQL
+SELECT 
+    Dealer_Region,
+    COUNT(*) AS Cars_Sold,
+    SUM(`Price($)`) AS Total_Revenue,
+    ROUND(AVG(`Price($)`), 2) AS Average_Car_Price
+FROM my_carss.`car sales.xlsx - car_data`
+GROUP BY Dealer_Region
+ORDER BY Total_Revenue DESC;
+```
+8. **Top 10 most expensive car models**
+```SQL
+SELECT
+Model, Company,
+Max(`price ($)`) AS Highest_Price
+from my_carss.`car sales.xlsx - car_data`
+group by Model, Company
+order by Highest_Price
+limit 10;
+```
+9. **Sales by Gender**
+```SQL
+SELECT 
+    Gender,
+    COUNT(*) AS Cars_Purchased,
+    SUM(`Price($)`) AS Total_Spending,
+    ROUND(AVG(`Price($)`), 2) AS Average_Spending
+FROM my_carss.`car sales.xlsx - car_data`
+GROUP BY Gender
+ORDER BY Total_Spending DESC;
+```
+10. **Monthly Sales Trend**
+```SQL
+SELECT 
+    YEAR(`Date`) AS Sales_Year,
+    MONTH(`Date`) AS Sales_Month,
+    COUNT(*) AS Cars_Sold,
+    SUM(`Price($)`) AS Total_Revenue
+FROM my_carss.`car sales.xlsx - car_data`
+GROUP BY 
+    YEAR(`Date`),
+    MONTH(`Date`)
+ORDER BY 
+    Sales_Year,
+    Sales_Month;
+```
