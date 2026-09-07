@@ -52,8 +52,40 @@ set sql_safe_updates = 1;
 
 ### Explorary Analysis
 1. **Total Cars Sold**
-
-   ```SQL
+ ```SQL
    SELECT COUNT(*) AS Count_Cars_Sold
    FROM my_carss.`car sales.xlsx - car_data`;
 ```
+2. **Total Revenue**
+```SQL
+SELECT sum(`Price ($)`) AS Total_Revenue
+From my_carss.`car sales.xlsx - car_data`;
+```
+3. **Average Car Price**
+``` SQL
+SELECT 
+    ROUND(AVG(`Price($)`), 2) AS Average_Car_Price
+FROM my_carss.`car sales.xlsx - car_data`;
+```
+
+4. **Top Car Manufacturers by Revenue**
+```SQL
+SELECT 
+    Company,
+    COUNT(*) AS Cars_Sold,
+    SUM(`Price($)`) AS Total_Revenue
+FROM my_carss.`car sales.xlsx - car_data`
+GROUP BY Company
+ORDER BY Total_Revenue DESC;
+```
+5. **Top 10 Best-Selling Models**
+```SQL
+SELECT
+ Model,
+count(*) AS Unit_sold
+from my_carss.`car sales.xlsx - car_data`
+group by Model
+order by Unit_sold desc
+limit 10;
+```
+6.  
