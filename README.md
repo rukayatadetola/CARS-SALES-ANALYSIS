@@ -22,5 +22,5 @@ The main objectives of this project are to:
 - Identify high-value sales and potential business opportunities.
 
 ### Tools & Technologies
-**MySQL** — Data cleaning, transformation, querying, and analysis
-**Excel** — Source dataset and initial data inspection
+- **MySQL** — Data cleaning, transformation, querying, and analysis
+- **Excel** — Source dataset and initial data inspection
