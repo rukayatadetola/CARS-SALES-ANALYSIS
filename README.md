@@ -23,4 +23,30 @@ The main objectives of this project are to:
 
 ### Tools & Technologies
 - **MySQL** — Data cleaning, transformation, querying, and analysis
+- **SQL** — Data manipulation and business analysis
 - **Excel** — Source dataset and initial data inspection
+
+## Analysis
+Before performing the analysis, the dataset was inspected for potential data quality issues.
+
+#### Date Conversion
+
+The Date column was initially stored as text rather than a proper SQL DATE data type.
+
+The dates were converted using:
+``` SQL
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE my_carss.`car sales.xlsx - car_data`
+SET `Date` = Case 
+when `Date` like '%/%' then date_format(STR_TO_DATE(`Date`,'%m/%d/%Y'), '%Y-%m-%d')
+when `Date` like '%-%' then date_format(STR_TO_DATE(`Date`,'%Y-%m-%d'), '%Y-%m-%d')
+ELSE null
+END;
+
+ALTER TABLE my_carss.`car sales.xlsx - car_data`
+MODIFY COLUMN `Date`DATE;
+
+set sql_safe_updates = 1;
+
+
