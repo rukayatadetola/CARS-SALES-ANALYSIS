@@ -26,7 +26,7 @@ The main objectives of this project are to:
 - **SQL** — Data manipulation and business analysis
 - **Excel** — Source dataset and initial data inspection
 
-## Analysis
+### Data Cleaning
 Before performing the analysis, the dataset was inspected for potential data quality issues.
 
 #### Date Conversion
@@ -48,5 +48,12 @@ ALTER TABLE my_carss.`car sales.xlsx - car_data`
 MODIFY COLUMN `Date`DATE;
 
 set sql_safe_updates = 1;
+```
 
+### Explorary Analysis
+1. **Total Cars Sold**
 
+   ```SQL
+   SELECT COUNT(*) AS Count_Cars_Sold
+   FROM my_carss.`car sales.xlsx - car_data`;
+```
