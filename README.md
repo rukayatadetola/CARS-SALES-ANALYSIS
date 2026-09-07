@@ -4,6 +4,8 @@
 - [Project Overview](#project-overview)
 - [Objectives](#objectives)
 - [Tools & Technologies](#tools-&-technologies)
+- [Data Cleaning](#data-cleaning)
+- [Exploratory Analysis](#exploratory-analysis)
 
 ### Project Overview
 This project focuses on analyzing car sales data to uncover meaningful insights into sales performance, revenue generation, customer purchasing patterns, vehicle characteristics, and dealer performance.
@@ -25,6 +27,7 @@ The main objectives of this project are to:
 - **MySQL** — Data cleaning, transformation, querying, and analysis
 - **SQL** — Data manipulation and business analysis
 - **Excel** — Source dataset and initial data inspection
+![Car sales Analysis on Excel](https://github.com/rukayatadetola/CARS-SALES-ANALYSIS/blob/main/Screenshot%202026-09-07%20132811.jpg)
 
 ### Data Cleaning
 Before performing the analysis, the dataset was inspected for potential data quality issues.
@@ -50,7 +53,7 @@ MODIFY COLUMN `Date`DATE;
 set sql_safe_updates = 1;
 ```
 
-### Explorary Analysis
+### Exploratory Analysis
 1. **Total Cars Sold**
  ```SQL
    SELECT COUNT(*) AS Count_Cars_Sold
